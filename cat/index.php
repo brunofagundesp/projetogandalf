@@ -64,11 +64,13 @@ if(isset($_GET['editar'])){
 //FIM Funcionalidade Editar Cadastro
 //Funcionalidade Excluir
 if(isset($_GET['excluir'])){
-	if(is_numeric($_GET['excluir'])){	
-		if(odbc_exec($db, "DELETE FROM Categoria WHERE idCategoria = {$_GET['excluir']}")){
-			$msg = 'Categoria removida com sucesso';					
-		}else{
-			$erro = 'Erro ao excluir o usuário';
+	if(is_numeric($_GET['excluir'])){
+		$id = $_GET['excluir'];
+		$select = odbc_exec($db, "SELECT nomeProduto FROM Produtos WHERE id=$id");
+		if (odbc_num_rows($select) == 0 && odbc_exec($db, "DELETE FROM Categoria WHERE idCategoria = {$_GET['excluir']}")) {
+			$msg = 'Categoria removida com sucesso';
+		} else {				
+			$erro = 'Erro ao excluir, existem produtos cadastrados nessa categoria.';
 		}
 		
 	}else{

@@ -33,7 +33,7 @@
 				<h4 style="margin-top: -1px;">Categorias</h4>   
 			</div>
 			<div class="col s6">
-				<a href="?cadastrar=1" class="waves-effect blue waves-light btn right"><i class="fa fa-plus" aria-hidden="true"></i> Novo Usuário</a> 
+				<a href="?cadastrar=1" class="waves-effect blue waves-light btn right"><i class="fa fa-plus" aria-hidden="true"></i> Nova Categoria</a> 
 				<div>
 					<a href="index.php" class="waves-effect white waves-light btn right black-text" style="margin-right: 5px; boder: 1px solid #696969 !important">
 						<i class="fa fa-refresh" aria-hidden="true"></i> Atualizar
